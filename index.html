@@ -3,42 +3,125 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=Explore tailwind css, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        .bebas-neue {
-            font-family: 'Bebas Neue', sans-serif;
+        * {
+            font-family: 'Roboto', sans-serif;
         }
     </style>
-    <title>Document</title>
+    <!-- tailwind custom class  -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'bike-color': '#E76F51',
+                        'primary-bg': 'rgba(231, 111, 81, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- custom class  -->
+    <title>Explore Tailwind </title>
 </head>
 
-<body class="bg-amber-100">
-    <nav></nav>
-    <header
-        class="flex flex-col md:flex-row md:justify-between sm:items-stretch align-middle px-4 py-4 md:px-32 md:py-6">
-        <aside class="space-y-7">
-            <h1 class="text-4xl md:text-7xl bebas-neue" uppercase><span class="text-[#fabe4c]">Be the Penguins</span> of
-                Winter </h1>
-            <p class="text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <button
-                class="uppercase text-base inline text-white bg-blue-600 py-4 px-5 rounded-xl bg-gradient-to-r from-orange-700 to-orange-500"><svg
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6 inline">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                </svg>
-                Buy Now
-        </aside>
-        <aside>
-            <img src="images/model.png" alt="">
-        </aside>
+<body>
+    <header class="md:container md:mx-auto">
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="grow">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </label>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Home</a></li>
+                            <li><a>Shop</a></li>
+                            <li><a>News</a></li>
+                            <li><a>Contact</a></li>
+
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost normal-case text-4xl">Go Ride</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Home</a></li>
+                        <li><a>Shop</a></li>
+                        <li><a>News</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <a class="btn btn-primary bg-bike-color text-white border-0">Button</a>
+                </div>
+            </div>
+        </nav>
+        <!-- slider  -->
+        <div class="carousel w-full bg-primary-bg   h-auto md:h-[550px] ">
+            <div id="slide1" class="carousel-item relative w-full justify-center py-2">
+                <div class="flex items-center gap-20 px-10">
+                    <div class="flex-1">
+                        <h1 class="text-2xl lg:text-6xl font-semibold">Ride-on R15 V4 with Smile</h1> <br>
+                        <p class="text-xs lg:text-2xl">Amet minim mollit non deserunt ullamco
+                            est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p> <br>
+                        <a href="#" class="btn btn-primary bg-bike-color border-0 text-white">Purchase</a>
+                    </div>
+                    <div class="flex-1">
+                        <img src="images/slider/bike1.png" class="w-full" />
+                    </div>
+                </div>
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide4" class="btn btn-circle bg-transparent border-0 hover:border hover:bg-transparent">❮</a>
+                    <a href="#slide2" class="btn btn-circle bg-transparent border-0 hover:border hover:bg-transparent">❯</a>
+                </div>
+            </div>
+            <!-- <div id="slide2" class="carousel-item relative w-full">
+                <img src="images/slider/bike2.png" class="w-full" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide1" class="btn btn-circle">❮</a>
+                    <a href="#slide3" class="btn btn-circle">❯</a>
+                </div>
+            </div>
+            <div id="slide3" class="carousel-item relative w-full">
+                <img src="images/slider/bike3.png" class="w-full" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide2" class="btn btn-circle">❮</a>
+                    <a href="#slide4" class="btn btn-circle">❯</a>
+                </div>
+            </div>
+            <div id="slide4" class="carousel-item relative w-full">
+                <img src="images/slider/bike4.png" class="w-full" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide3" class="btn btn-circle">❮</a>
+                    <a href="#slide1" class="btn btn-circle">❯</a>
+                </div>
+            </div> -->
+        </div>
     </header>
+    <main class="md:container md:mx-auto">
+        <p>this is main body</p>
+    </main>
+    <footer>
+        <p>this is footer</p>
+    </footer>
+
 </body>
 
 </html>
